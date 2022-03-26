@@ -46,21 +46,21 @@ jobs:
           name: Maven Test
           command: ./mvnw test
 
-  # test-2:
-  #   docker:
-  #     # - image: circleci/openjdk
-  #     - image: cimg/node:12.16
-  #   steps:
-  #     - checkout
-  #     - run: node --version
-  #     - node/install-packages:
-  #         cache-path: ~/project/node_modules
-  #         override-ci-command: npm install
-  #     - run: sudo npm install -g npm@latest
-  #     - run:
-  #         name: Install jest
-  #         command: npm install --save-dev jest
-  #     - run: npm run test
+  test-2:
+    docker:
+      # - image: circleci/openjdk
+      - image: cimg/node:12.16
+    steps:
+      - checkout
+      - run: node --version
+      - node/install-packages:
+          cache-path: ~/project/node_modules
+          override-ci-command: npm install
+      - run: sudo npm install -g npm@latest
+      - run:
+          name: Install jest
+          command: npm install --save-dev jest
+      - run: npm run test
 
   test-3:
     docker:
@@ -73,7 +73,7 @@ jobs:
           cache-path: ~/project/node_modules
           override-ci-command: npm install
       - run: sudo npm install -g npm@latest
-          name: Install unitjs
+        name: Install unitjs
           command: npm install unit.js
       - run:
           command: npm run test
