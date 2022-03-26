@@ -73,10 +73,9 @@ jobs:
           cache-path: ~/project/node_modules
           override-ci-command: npm install
       - run: sudo npm install -g npm@latest
-        name: Install unitjs
-          command: npm install unit.js
-      - run:
-          command: npm run test
+  name: Install unitjs
+  command: npm install unit.js
+command: npm run test
 
 # test by sequentially executing
 
