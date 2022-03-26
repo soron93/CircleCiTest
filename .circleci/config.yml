@@ -77,7 +77,7 @@ jobs:
       - run: sudo npm install -g npm@latest
   name: Install unitjs
   command: npm install unit.js
-command: npm run test
+run: npm run test
 
 # test by sequentially executing
 
