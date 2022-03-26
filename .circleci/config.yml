@@ -1,5 +1,5 @@
 # First create version
-Version: 2.1
+version: 2.1
 
 orbs:
   node: circleci/node@4.1.0
@@ -7,7 +7,7 @@ orbs:
 nightly:
   triggers:
     - schedule:
-      cron: "* * * * *"
+      cron: "* * * * *"s
       filters:
         branches:
           only:
@@ -51,7 +51,7 @@ Workflows:
   build-test:
     jobs:
       - build
-      - test_1:
+      - test-1:
           requires:
             - build
 # # Use the latest 2.1 version of CircleCI pipeline process engine.
