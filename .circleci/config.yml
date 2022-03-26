@@ -52,7 +52,7 @@ jobs:
       - image: cimg/node:12.16
     steps:
       - checkout
-      - run: node --version
+      # - run: node --version
       - node/install-packages:
           # cache-path: ~/project/node_modules
           override-ci-command: npm install
