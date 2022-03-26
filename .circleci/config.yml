@@ -52,11 +52,15 @@ jobs:
       - image: cimg/node:12.16
     steps:
       - checkout
+      # - run: node --version
       - node/install-packages:
-        overide-ci-command: npm i npm5
+        overide-ci-command: npm install
+      # - run:
+      # name: Install npm
+      # # command: npm install npm-force-resolutions --save-dev
       - run:
-          name: Install jest
-          command: npm install --save-dev jest
+          # name: Install
+          command: npm install -g npm@latest
       - run:
           command: npm run test
   test-3:
