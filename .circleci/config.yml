@@ -56,7 +56,7 @@ jobs:
       - node/install-packages:
           cache-path: ~/project/node_modules
           override-ci-command: npm install
-      - run: npm install -g npm@latest
+      - run: sudo npm install -g npm@latest
       - run:
           name: Install jest
           command: npm install --save-dev jest
