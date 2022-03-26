@@ -79,8 +79,8 @@ jobs:
       - run: sudo npm install -g npm@latest
       - run:
           name: Install unitjs
-          command: npm install unit.js
-      - run: npm run test
+          command: npm install --save-dev unit.js
+      - run: npm test
 
 #   test-3:
 #     docker:
