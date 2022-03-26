@@ -7,7 +7,7 @@ orbs:
 nightly:
   triggers:
     - schedule:
-      cron: "* * * * *"s
+      cron: "* * * * *"
       filters:
         branches:
           only:
