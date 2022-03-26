@@ -74,10 +74,29 @@ jobs:
       # - node/install-packages:
       #     cache-path: ~/project/node_modules
       #     override-ci-command: npm install
+      # - restore_cache:
+      #     keys: v1-dependencies-{{ checksum "package.json" }}
       - run: sudo npm install -g npm@latest
-  name: Install unitjs
-  command: npm install unit.js
-run: npm run test
+      - run:
+          name: Install unitjs
+          command: npm install --save-dev unit.js
+      - run: npm run test
+
+#   test-3:
+#     docker:
+#       # - image: circleci/openjdk
+#       - image: cimg/node:12.16
+#     steps:
+#       - checkout
+#       - run: node --version
+#       # - node/install-packages:
+#       #     cache-path: ~/project/node_modules
+#       #     override-ci-command: npm install
+#       - run: sudo npm install -g npm@latest
+#   name: Install unitjs
+#   command: npm install unit.js
+# run: npm run test
+
 
 # test by sequentially executing
 
