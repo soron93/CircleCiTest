@@ -54,7 +54,7 @@ jobs:
       - checkout
       - run: node --version
       - node/install-packages:
-          cache-path: ~/project/node_modules
+          # cache-path: ~/project/node_modules
           override-ci-command: npm install
       - run: sudo npm install -g npm@latest
       - run:
@@ -70,7 +70,7 @@ jobs:
       - checkout
       - run: node --version
       - node/install-packages:
-          cache-path: ~/project/node_modules
+          # cache-path: ~/project/node_modules
           override-ci-command: npm install
       - run: sudo npm install -g npm@latest
   name: Install unitjs
