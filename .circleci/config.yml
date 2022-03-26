@@ -52,17 +52,13 @@ jobs:
       - image: cimg/node:12.16
     steps:
       - checkout
-      # - run: node --version
+      - run: node --version
       - node/install-packages:
-        overide-ci-command: npm install
-      # - run:
-      # name: Install npm
-      # # command: npm install npm-force-resolutions --save-dev
-      - run:
-          # name: Install
-          command: sudo npm install -g npm@latest
-      - run:
-          command: npm run test
+          cache-path: ~/project/node_modules
+          override-ci-command: npm install
+      - run: sudo npm install -g npm@latest
+      - run: npm run test
+
   test-3:
     docker:
       # - image: circleci/openjdk
