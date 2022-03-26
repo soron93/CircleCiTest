@@ -68,9 +68,11 @@ jobs:
       - image: cimg/node:12.16
     steps:
       - checkout
+      - run: node --version
       - node/install-packages:
-        overide-ci-command: npm i
-      - run:
+          cache-path: ~/project/node_modules
+          override-ci-command: npm install
+      - run: sudo npm install -g npm@latest
           name: Install unitjs
           command: npm install unit.js
       - run:
