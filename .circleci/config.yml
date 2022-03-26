@@ -43,10 +43,10 @@ jobs:
           name: Setup maven wrapper
           command: mvn -N io.takari:maven:wrapper
       - run:
-          name: Load wrapper
+          name: Maven Test
           command: ./mvnw test
 
-Workflows:
+workflows:
   version: 2.1
   build-test:
     jobs:
