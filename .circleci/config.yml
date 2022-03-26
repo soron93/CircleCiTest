@@ -52,10 +52,12 @@ jobs:
       - image: cimg/node:12.16
     steps:
       - checkout
-      # - run: node --version
-      - node/install-packages:
-          # cache-path: ~/project/node_modules
-          override-ci-command: npm install
+      - run: node --version
+      # - node/install-packages:
+      #     cache-path: ~/project/node_modules
+      #     override-ci-command: npm install
+      - restore_cache:
+          keys: v1-dependencies-{{ checksum "package.json" }}
       - run: sudo npm install -g npm@latest
       - run:
           name: Install jest
@@ -70,7 +72,7 @@ jobs:
       - checkout
       - run: node --version
       - node/install-packages:
-          # cache-path: ~/project/node_modules
+          cache-path: ~/project/node_modules
           override-ci-command: npm install
       - run: sudo npm install -g npm@latest
   name: Install unitjs
