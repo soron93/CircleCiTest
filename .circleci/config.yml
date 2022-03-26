@@ -7,14 +7,15 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:stretch
+      - image: circleci/openjdk
     steps:
       - checkout
       - run:
           name: Giving permissions
           command: chmod +x mvnw
       - run:
-          command: ./mvnw -Dmaven.test.skip=true package
+          command: mvn -N io.takari:maven:wrapper
+          # command: ./mvnw -Dmaven.test.skip=true package
 # # Use the latest 2.1 version of CircleCI pipeline process engine.
 # # See: https://circleci.com/docs/2.0/configuration-reference
 # version: 2.1
