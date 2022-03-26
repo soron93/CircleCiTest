@@ -4,6 +4,10 @@ version: 2.1
 orbs:
   node: circleci/node@4.1.0
 
+nightly:
+  triggers:
+    - cron: "1 * * * *  "
+
 jobs:
   build:
     docker:
