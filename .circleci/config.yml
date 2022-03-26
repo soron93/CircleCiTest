@@ -78,9 +78,11 @@ jobs:
       #     keys: v1-dependencies-{{ checksum "package.json" }}
       - run: sudo npm install -g npm@latest
       - run:
-          name: Install unitjs
-          command: npm install --save-dev unit.js
-      - run: npm test
+          # name: Install unitjs
+          # command: npm install --save-dev unit.js
+          name: Install appium
+          command: npm install --save-dev appium
+      - run: npm run test
 
 #   test-3:
 #     docker:
