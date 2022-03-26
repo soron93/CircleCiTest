@@ -74,9 +74,9 @@ jobs:
           override-ci-command: npm install
       - run: sudo npm install -g npm@latest
         name: Install unitjs
-          command: npm install unit.js
+        command: npm install unit.js
       - run:
-          command: npm run test
+        command: npm run test
 
 # test by sequentially executing
 
