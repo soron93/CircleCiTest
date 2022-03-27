@@ -81,8 +81,8 @@ jobs:
           # name: Install unitjs
           # command: npm install --save-dev unit.js
           name: Install appium
-          command: npm install --save-dev appium
-      - run: appium
+          command: npm install --save-dev unit.js
+      # - run: 
 
 #   test-3:
 #     docker:
