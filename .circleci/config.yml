@@ -80,7 +80,7 @@ jobs:
       - run:
           # name: Install unitjs
           # command: npm install --save-dev unit.js
-          name: Install appium
+          name: Install unitjs
           command: npm install --save-dev unit.js
       # - run: 
 
